@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="在携程旅行社区分享您的旅游游记攻略,分享您的最新旅游游记，通过手机浏览、点评旅游游记攻略。这里有来自全球各地旅游用户分享当季旅游旅行者的旅游心得，记录当季旅游旅行者在旅游过程中遇到的景点，风土,民俗、文化等当季旅游游记。要旅行，从携程旅行开始。" />
+    <meta name="keywords" content="当季旅游游记,当季旅游游记攻略,当季旅游自助游游记,当季旅游旅游心得,当季旅游行程安排,最新旅游攻略,最新游记,手机旅游网站" />
+    <title>最新旅游游记攻略,当季旅游旅游体验,旅游自助游游记-携程旅行社区</title>
+    <meta name="apple-itunes-app" content="app-id=379395415">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta content="telephone=no" name="format-detection" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="携程旅行网攻略社区无线版">
+    <link rel="apple-touch-startup-image" href="http://res.m.ctrip.com/html5/Content/images/startImg.png">
+    <link rel="apple-touch-icon-precomposed" href="http://res.m.ctrip.com/html5/Content/images/logo_57.png" />
+     <link href='css/bootstrap.min.css' rel='stylesheet' type='text/css' />
+    <link href='http://m.ctrip.com/you/css/common-v1.0.min.css' rel='stylesheet' type='text/css' />
+	
+	  <!-- load the libraries we need -->
+	  <script type="text/javascript" src="js/libs/jquery.min.js"></script>
+	  <script type="text/javascript" src="js/libs/underscore.min.js"></script>
+	  <script type="text/javascript" src="js/libs/backbone.min.js"></script>
+	  <!-- load our scripts -->
+	  <script type="text/javascript" src="js/gowith_router.js"></script>
+	  <script type="text/javascript" src="js/models/gowith_model.js"></script>
+	  <script type="text/javascript" src="js/views/gowith_index.js"></script>
+	  <script type="text/javascript" src="js/views/gowith_row.js"></script>
+	  <script type="text/javascript" src="js/views/gowith_new.js"></script>
+	  <script type="text/javascript" src="js/views/gowith_detail.js"></script>
+	<style>
+	 
+		.d_r_nav_01 a {
+			width: 33.33%;
+		}
+		
+		.head-title{
+		  text-align:center;
+		  font-size:20px
+		}
+		.m_ctrip{
+		  top:0;
+		}
+		
+		.m_ctrip a{
+		   padding:0;
+		   height: 20px;
+			line-height: 20px;
+			color: white;
+			text-shadow: none;
+			background: green;
+		}
+	</style>
+</head>
+<body>
+    <header id="p_header" class="p_header">
+            <nav class="p_nav">
+            <h1 class="head-title"  >结伴</h1>
+            <span class="nav m_ctrip">
+                <a  href="#gowith/new">发起结伴</a></span>
+        </nav>
+    </header>
+	
+
+    <div id="dynamic_content" class="content">
+      <!-- 主视图  -->
+    </div>
+<script type="text/template" id="template_gowith_index">
+	<section class="item_list_con">
+    <div class="item_list">
+        <ul>
+	 
+                
+        </ul>
+    </div>
+ 
+
+</section>
+ </script>
+  <script type="text/template" id="template_gowith_row">
+                    <a  class="nav_title" href="javascript:;"><%= title %></a>
+                    <div class="d_r_list_img">
+                        <span class="great"></span>
+                        <img  src="<%= img %>" />
+                    </div>
+                    <div>
+                        <h4 class="j_list_tit"><%= title %></h4>
+                        <p class="j_list_p">
+                            <span class="author"><%= description %></span> 
+                            <span class="pub_time"><%= beginTime %></span>
+                        </p>
+                        <p class="meta">
+                            <span><i class="want"></i>364</span> 
+                            <span><i class="reply"></i>193</span>
+                            <span><i class="view"></i>45885</span>
+                        </p>
+                    </div>
+ </script>	
+
+  <!-- the form, used for create and edit -->
+  <script type="text/template" id="template_gowith_new">
+    <div class="well">
+      <div class="alert alert-error" style="display:none;"></div>
+      <form>
+        <h2 class="form-signin-heading"></h2>
+       <div class="control-group">
+          <input type="text" class="input-block-level" name="title" placeholder="标题" value="<%= title %>" />
+        </div>
+        <div class="control-group">
+          <input type="text" class="input-block-level" name="destination" placeholder="目的地" value="<%= destination %>" />
+        </div>
+        <div class="control-group">
+          <input type="text" class="input-block-level" name="beginTime" placeholder="开始时间" value="<%= beginTime %>" />
+        </div>
+        <div class="control-group">
+          <textarea class="input-block-level" rows="5" name="description" placeholder="说明"><%= description %></textarea>
+        </div>
+        <div class="form-actions">
+          <button class="save btn btn-large btn-info" type="submit">保存</button> 或
+          <a href="#gowiths/index" class="btn btn-large">取消</a>
+        </div>
+      </form>
+    </div>
+  </script> 
+    
+ <script type="text/template" id="template_gowith_detail">
+ <section class="d_bgf5f5f5">
+    <div class="j_par det_content micro">
+        <div class="user_det">
+            <div>
+                <h1>
+                    巴厘岛，漫生活
+                </h1>
+            </div>
+        </div>
+        <div class="d_comments">
+            <div class="d_user_info">
+                <img src="http://images4.c-ctrip.com/target/headphoto/478/085/430/819209e139a44c0799cf39b25b964825_180_180.jpg">
+                <div>
+                    <p class="meta">
+                        <span class="d_user_name">
+                            Tiffany912036375
+                        </span>
+                        <span class="d_user_date">
+                            发表于2013-10-19
+                        </span>
+                        <span class="fr">
+                            <i class="reply">
+                            </i>
+                            119
+                        </span>
+                        <span class="fr">
+                            <i class="want">
+                            </i>
+                            999+
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="content" id="lazyScrollLoading">
+            <div class="main">
+                <div class="date">
+                    <div class="day_box">
+                        <span class="year">
+                            26
+                        </span>
+                        <span class="month">
+                            9月
+                        </span>
+                        <span class="day ">
+                            第1天
+                        </span>
+                    </div>
+                    <div class="journal_des">
+                        <div class="journal_des_con">
+                            <p class="quote_desc">
+                                <i class="quote_forward">
+                                </i>
+                                旅行分两种，度假和观光。 忙碌的工作后就该给自己度个假，海岛就是个非常好的选择。 巴厘岛，蜜月圣地。一流的 酒店，二流的沙滩，三流的景点。
+                                所以此次出行，目的非常明确，休闲游，不忙着跑景点。 各大代理： 1.Silky Phang ： silkyphang@yahoo.com 中文沟通，我向她预定了漂流和ayana的酒店住宿。
+                                2.Piyu：piyules@hotmail.com 英文 沟通 3.Steven Lee：vivastevenlee@hotmail.com
+                                中文沟通 4.vivian：QQ：58364127 中文沟通
+                                <i class="quote_back">
+                                </i>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear-fix">
+        </div>
+    </div>
+</section>
+ </script>
+        
+     <script type="text/javascript">
+	        var Gowiths = new APP.Collections.GowithCollection();
+    var router = new APP.Routers.GowithRouter({Gowiths: Gowiths});
+
+    Backbone.history.start();
+    // we manually pass in the initial data, but this would be called with a collection.fetch() normally
+    getServerData(function(data){
+	 Gowiths.reset(data);
+	});
+	 
+	 </script>
+ 
+
+
+</body>
+</html>
