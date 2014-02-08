@@ -1,4 +1,4 @@
-gowtih-backbone
+gowith-backbone
 ===============
 
-gowtih-backbone is a backone.js spa demo
+gowith-backbone is a backone.js spa demo
